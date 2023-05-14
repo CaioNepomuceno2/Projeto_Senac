@@ -29,7 +29,7 @@ Para instalar e executar este projeto, você precisa ter Python 3 e pip instalad
 1. Primeiro, clone o repositório para o seu sistema local:
 
    ```
-   git clone https://github.com/seu_usuario/Projeto_Senac.git
+   git clone https://github.com/CaioNepomuceno2/Projeto_Senac.git
    ```
 
 2. Vá para o diretório do projeto
