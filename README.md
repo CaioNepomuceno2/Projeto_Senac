@@ -13,10 +13,12 @@ Os arquivos principais da aplicação são:
 - `db.py`: Este arquivo contém funções para a criação do banco de dados e para adicionar usuários.
 
 - `templates/index.html`: Este é o arquivo de modelo para a página inicial da aplicação.
+- ![Logo do Projeto Senac](https://github.com/CaioNepomuceno2/Projeto_Senac/blob/9b79c47fe8c0bcbdd4bc43b922d0b4afff4e952f/static/img/TelaLogin.PNG)
 
 - `templates/dashboard.html`: Este é o arquivo de modelo para a página Aluno da aplicação.
 
 - `templates/professor.html`: Este é o arquivo de modelo para a página Professor da aplicação.
+- ![Logo do Projeto Senac](https://github.com/CaioNepomuceno2/Projeto_Senac/blob/9b79c47fe8c0bcbdd4bc43b922d0b4afff4e952f/static/img/dashprof.PNG)
 
 - `templates/diretor.html`: Este é o arquivo de modelo para a página Diretor da aplicação.
 
