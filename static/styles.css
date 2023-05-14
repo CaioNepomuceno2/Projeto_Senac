@@ -1,0 +1,878 @@
+:root {
+    --color-background: #F1EEEE;
+    --color-foreground: #6C79F1;
+    --color-text: #000000;
+    --color-text-inverted: #FFFFFF;
+}
+
+[data-theme="dark"] {
+    --color-background: #121212;
+    --color-foreground: #242424;
+    --color-text: #FFFFFF;
+    --color-text-inverted: #000000;
+}
+
+  
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--color-background);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    max-width: 1196px;
+    height: 100%;
+    max-height: 723px;
+    flex-grow: 1;
+}
+
+.menu-lateral {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: #6C79F1;
+    border-radius: 16px 0px 0px 16px;
+    padding: 16px;
+    box-shadow: 5px 4px 10px rgba(0, 0, 0, 0.25);
+    height: 100%;
+    width: 40%;
+    position: relative;
+}
+
+.logo {
+    width: 40px;
+    height: 32px;
+    margin-bottom: 42px;
+    margin-right: 400px;
+}
+
+.titulo {
+    font-weight: 900;
+    font-size: 2.8rem;
+    line-height: 72px;
+    color: var(--color-text-inverted);
+    text-align: left;
+    margin-bottom: 16px;
+}
+
+.titulo span {
+    display: block;
+}
+
+.acessibilidade {
+    position: relative;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.acessibilidade-menu {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 150px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    padding: 12px 16px;
+    border-radius: 10px;
+    margin-left: -120px;
+    margin-top: -180px;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+}
+
+input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+label {
+    font-size: 16px;
+}
+
+.acessibilidade-menu.show {
+    display: block;
+    opacity: 1;
+}
+
+.toggle-image {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    margin-right: 5px;
+    vertical-align: middle;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.acessibilidade-menu {
+    opacity: 0.7;
+    animation: fadeIn 0.3s ease-out;
+}
+
+
+
+.acessibilidade {
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 24px;
+    color: var(--color-text-inverted);
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 16px;
+    
+}
+
+.accessibility-icon{
+    width: 32px;
+    height: 32px;
+    color: var(--color-text-inverted);
+    filter: invert(1);
+    margin-left: -210px;
+    margin-right: 8px;
+    
+}
+
+.dark-mode-icon {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 10px;
+    width: 30px;
+    height: 30px;
+  }
+  
+.switch {
+position: relative;
+display: inline-block;
+width: 60px;
+height: 34px;
+vertical-align: middle;
+}
+
+
+.switch input {
+opacity: 0;
+width: 0;
+height: 0;
+}
+
+.slider {
+position: absolute;
+cursor: pointer;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background-color: #ccc;
+transition: 0.4s;
+border-radius: 34px;
+}
+
+.slider:before {
+position: absolute;
+content: "";
+height: 26px;
+width: 26px;
+left: 4px;
+bottom: 4px;
+background-color: white;
+transition: 0.4s;
+border-radius: 50%;
+}
+
+input:checked + .slider {
+background-color: #2196F3;
+}
+
+input:checked + .slider:before {
+transform: translateX(26px);
+}
+
+input:checked + .slider {
+background-color: green;
+}
+
+input:not(:checked) + .slider {
+background-color: red;
+}
+
+.graduation-cap {
+    width: 148px;
+    height: 100px;
+    filter: invert(100%);
+}
+
+
+.entrar {
+    font-weight: 900;
+    font-size: 1.6rem;
+    line-height: 48px;
+    background-color: rgba(108, 121, 241, 0.63);
+    color: var(--color-text-inverted);
+    border-radius: 50px;
+    border: none;
+    width: 200px;
+    height: 50px;
+    margin-bottom: 24px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+}
+
+.input-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    background-color: #F1EEEE;
+    border-radius: 8px;
+    margin-bottom: 16px;
+    overflow: visible;
+    position: relative;
+    padding: 0 8px;
+}
+
+.input-icon {
+    width: 41px;
+    height: 41px;
+    margin-left: 8px;
+    position: absolute;
+    left: 8px;
+    filter: invert(1) grayscale(1) brightness(0.4);
+}
+
+.login-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    background-color: var(--color-text-inverted);
+    box-shadow: 5px 4px 10px rgba(0, 0, 0, 0.25);
+    border-top-right-radius: 16px;
+    border-bottom-right-radius: 16px;
+    padding: 16px;
+    width: 70%;
+    height: 100%;
+    position: relative;
+    padding-top: 230px;
+}
+
+.login-container h2 {
+    font-weight: 900;
+    font-size: 1.8rem;
+    line-height: 48px;
+    color: #6C79F1;
+    margin-bottom: 16px;
+    text-align: left;
+    margin-left: 16px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+label {
+    font-weight: 400;
+    font-size: 1.5rem;
+    line-height: 48px;
+    color: #a3a3a3;
+    margin-bottom: 8px;
+}
+
+input[type="text"], input[type="password"] {
+    width: 100%;
+    height: 3rem;
+    background-color: transparent;
+    border: none;
+    margin-bottom: 16px;
+    padding: 8px;
+}
+
+.recuperar-senha {
+    font-weight: 300;
+    font-size: 1.25rem;
+    line-height: 30px;
+    color: #6C79F1;
+    margin-bottom: 16px;
+    text-decoration: none;
+    align-self: flex-start;
+}
+
+.roles {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: auto;
+    margin-bottom: 16px;
+}
+
+.diretor, .professor {
+    font-weight: 900;
+    font-size: 1.4rem;
+    line-height: 40px;
+    background-color: rgba(108, 121, 241, 0.63);
+    color: #FFFFFF;
+    border-radius: 41.5978px;
+    border: none;
+    width: 200.5px;
+    height: 58px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    text-align: center;
+    margin-bottom: 24px;
+    margin-top: 60px;
+}
+
+input[type="submit"] {
+    display: none;
+}
+
+.input-field {
+    font-size: 1.4em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #C1C1C1;
+    align-items: center;
+    text-align: center;
+    text-decoration-color: #C1C1C1;
+    margin-left: 60px;
+    margin-top: 20px;
+}
+
+#username, #password {
+    text-align: left;
+}
+
+.input-field label {
+    display: flex;
+    align-items: center;
+    font-family: 'Poppins';
+    font-size: 2.2em;
+    font-weight: 400;
+    line-height: 1.5em;
+    text-decoration: underline;
+}
+
+.input-field label:first-child {
+    margin-right: 20px;
+    justify-content: flex-end;
+}
+.input-field input[type="text"], 
+.input-field input[type="password"] {
+    position: absolute;
+    left: 50px;
+    bottom: 0;
+    width: 420px;
+    height: 48px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 2.2em;
+    line-height: 48px;
+    display: flex;
+    align-items: center;
+    color: #bdbdbd;
+    border-bottom: 2px solid #bdbdbd;
+}
+
+.login-container {
+    padding-top: 230px;
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+    html, body {
+        height: 100%;
+    }
+    body {
+        font-family: 'Poppins', sans-serif;
+        background-color: #F1EEEE;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+    }
+
+    .menu-lateral {
+        width: 100%;
+        height: auto;
+        padding: 16px 0;
+        border-radius: 16px 16px 0 0;
+    }
+    
+    .login-container {
+        width: 100%;
+        height: auto;
+        padding: 32px 16px;
+        border-radius: 0 0 16px 16px;   
+    }
+    
+    .input-container {
+        padding: 0 8px;
+    }
+    
+    .graduation-cap {
+        width: 48px;
+        height: 48px;
+        margin-bottom: 16px;
+    }
+    
+    .roles {
+        flex-direction: column;
+    }
+
+    .diretor, .professor {
+        margin-bottom: 16px;
+    }
+
+    .diretor {
+        margin-right: 0;
+    }
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #F1EEEE;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    max-width: 1196px;
+    height: 100%;
+    max-height: 723px;
+    flex-grow: 1;
+}
+
+.menu-lateral {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: #6C79F1;
+    border-radius: 16px 0px 0px 16px;
+    padding: 16px;
+    box-shadow: 5px 4px 10px rgba(0, 0, 0, 0.25);
+    height: 100%;
+    width: 40%;
+    position: relative;
+}
+
+.logo {
+    width: 40px;
+    height: 32px;
+    margin-bottom: 42px;
+    margin-right: 400px;
+}
+
+.titulo {
+    font-weight: 900;
+    font-size: 2.8rem;
+    line-height: 72px;
+    color: #FFFFFF;
+    text-align: left;
+    margin-bottom: 16px;
+}
+
+.titulo span {
+    display: block;
+}
+
+.acessibilidade {
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 24px;
+    color: #FFFFFF;
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 16px;
+    
+}
+
+.accessibility-icon{
+    width: 32px;
+    height: 32px;
+    color: #FFFFFF;
+    filter: invert(1);
+    margin-left: -210px;
+    margin-right: 8px;
+    
+}
+
+.graduation-cap {
+    width: 148px;
+    height: 100px;
+    filter: invert(100%);
+}
+
+
+.entrar {
+    font-weight: 900;
+    font-size: 1.6rem;
+    line-height: 48px;
+    background-color: rgba(108, 121, 241, 0.63);
+    color: #FFFFFF;
+    border-radius: 50px;
+    border: none;
+    width: 200px;
+    height: 50px;
+    margin-bottom: 24px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+}
+
+.input-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    background-color: #F1EEEE;
+    border-radius: 8px;
+    margin-bottom: 16px;
+    overflow: visible;
+    position: relative;
+    padding: 0 8px;
+}
+
+.input-icon {
+    width: 41px;
+    height: 41px;
+    margin-left: 8px;
+    position: absolute;
+    left: 8px;
+    filter: invert(1) grayscale(1) brightness(0.4);
+}
+
+.login-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    background-color: #FFFFFF;
+    box-shadow: 5px 4px 10px rgba(0, 0, 0, 0.25);
+    border-top-right-radius: 16px;
+    border-bottom-right-radius: 16px;
+    padding: 16px;
+    width: 70%;
+    height: 100%;
+    position: relative;
+    padding-top: 230px;
+}
+
+.login-container h2 {
+    font-weight: 900;
+    font-size: 1.8rem;
+    line-height: 48px;
+    color: #6C79F1;
+    margin-bottom: 16px;
+    text-align: left;
+    margin-left: 16px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+label {
+    font-weight: 400;
+    font-size: 1.5rem;
+    line-height: 48px;
+    color: #a3a3a3;
+    margin-bottom: 8px;
+}
+
+input[type="text"], input[type="password"] {
+    width: 100%;
+    height: 3rem;
+    background-color: transparent;
+    border: none;
+    margin-bottom: 16px;
+    padding: 8px;
+}
+
+.recuperar-senha {
+    font-weight: 300;
+    font-size: 1.25rem;
+    line-height: 30px;
+    color: #6C79F1;
+    margin-bottom: 16px;
+    text-decoration: none;
+    align-self: flex-start;
+}
+
+.roles {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: auto;
+    margin-bottom: 16px;
+}
+
+.diretor, .professor {
+    font-weight: 900;
+    font-size: 1.4rem;
+    line-height: 40px;
+    background-color: rgba(108, 121, 241, 0.63);
+    color: #FFFFFF;
+    border-radius: 41.5978px;
+    border: none;
+    width: 200.5px;
+    height: 58px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    text-align: center;
+    margin-bottom: 24px;
+    margin-top: 60px;
+}
+
+input[type="submit"] {
+    display: none;
+}
+
+.input-field {
+    font-size: 1.4em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #C1C1C1;
+    align-items: center;
+    text-align: center;
+    text-decoration-color: #C1C1C1;
+    margin-left: 60px;
+    margin-top: 20px;
+}
+
+#username, #password {
+    text-align: left;
+}
+
+.input-field label {
+    display: flex;
+    align-items: center;
+    font-family: 'Poppins';
+    font-size: 2.2em;
+    font-weight: 400;
+    line-height: 1.5em;
+    text-decoration: underline;
+}
+
+.input-field label:first-child {
+    margin-right: 20px;
+    justify-content: flex-end;
+}
+.input-field input[type="text"], 
+.input-field input[type="password"] {
+    position: absolute;
+    left: 50px;
+    bottom: 0;
+    width: 420px;
+    height: 48px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 2.2em;
+    line-height: 48px;
+    display: flex;
+    align-items: center;
+    color: #bdbdbd;
+    border-bottom: 2px solid #bdbdbd;
+}
+
+.login-container {
+    padding-top: 230px;
+}
+
+.acessibilidade-menu {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    padding: 10px;
+    z-index: 100;
+    display: none;
+}
+
+.acessibilidade-menu .menu-item {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.acessibilidade-menu .menu-item:last-child {
+    margin-bottom: 0;
+}
+
+.acessibilidade-menu .menu-item span {
+    margin-left: 10px;
+}
+
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+    html, body {
+        height: 100%;
+    }
+    body {
+        font-family: 'Poppins', sans-serif;
+        background-color: #F1EEEE;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+    }
+
+    .menu-lateral {
+        width: 100%;
+        height: auto;
+        padding: 16px 0;
+        border-radius: 16px 16px 0 0;
+    }
+    
+    .login-container {
+        width: 100%;
+        height: auto;
+        padding: 32px 16px;
+        border-radius: 0 0 16px 16px;   
+    }
+    
+    .input-container {
+        padding: 0 8px;
+    }
+    
+    .graduation-cap {
+        width: 48px;
+        height: 48px;
+        margin-bottom: 16px;
+    }
+    
+    .roles {
+        flex-direction: column;
+    }
+
+    .diretor, .professor {
+        margin-bottom: 16px;
+    }
+
+    .diretor {
+        margin-right: 0;
+    }
+    .logo {
+        margin-bottom: 24px; 
+        margin-right: 0;
+    }
+
+    .titulo {
+        font-size: 2.2rem; 
+        line-height: 60px; 
+        margin-bottom: 16px; 
+        margin-left: 8px;
+        margin-right: 8px;
+    }
+
+    .login-container h2 {
+        font-size: 1.6rem;
+        margin-left: 8px; 
+    }
+
+    .input-field input[type="text"], 
+    .input-field input[type="password"] {
+        font-size: 1.8em;
+        left: 24px; 
+        width: 90%; 
+    }
+
+    .recuperar-senha {
+        font-size: 1.1rem; 
+    }
+
+    .diretor, .professor {
+        font-size: 1.2rem; 
+        width: 100%;
+    }
+    .acessibilidade {
+        justify-content: center;
+        margin-top: 16px;
+    }
+
+    .accessibility-icon {
+        margin-left: 8px;
+        margin-right: 8px;
+    }
+
+    .graduation-cap {
+        margin-bottom: 42px; 
+    }
+    body {
+        height: auto;
+        min-height: 100vh;
+        padding-bottom: 16px;
+    }
+
+    .container {
+        height: auto;
+        max-height: none;
+    }
+
+    .menu-lateral, .login-container {
+        height: auto;
+        min-height: auto;
+    }
+}
+}
+
+
