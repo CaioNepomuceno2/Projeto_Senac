@@ -59,3 +59,21 @@ Para contribuir para este projeto, siga os seguintes passos:
 5. Abra um pull request para mesclar seu branch com o branch principal deste repositório.
 
 Por favor, certifique-se de testar suas alterações antes de abrir um pull request.
+
+A segunda entrega do PI será mais desafiadora e vocês deverão utilizar os conhecimentos adquiridos em disciplinas de desenvolvimento web.
+
+    1. Pensem em uma história/jornada a partir da visão de produto, personas e protótipo desenvolvido na primeira entrega e elabore uma aplicação web ou um aplicativo que reflita este cenário/jornada;
+
+    2. Deve ser entregue o projeto desenvolvido postado no GitHub (enviar o link) com o README explicado com devemos testar a aplicação desenvolvida (instalações e visualização). O nome dos integrantes e o Grupo deve constar no README;
+
+    3. Produzir um vídeo de aproximadamente 1 min mostrando o app web em funcionamento. Enviar um link privado do YouTube.
+
+Alunos: 
+
+    BARBARA GOMES BARBOSA
+    BRUNO SANTOS SOUZA
+    CAIO HENRIQUE NEPOMUCENO SANTOS
+    CAROLINA CRISTINA ALVES CARDOSO
+    GUILHERME GABRIEL DA SILVA
+    RODOLFO SALDANHA JARDIM
+    RODRIGO SANTOS DE AQUINO
