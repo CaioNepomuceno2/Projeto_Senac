@@ -14,6 +14,14 @@ Os arquivos principais da aplicação são:
 
 - `templates/index.html`: Este é o arquivo de modelo para a página inicial da aplicação.
 
+- `templates/dashboard.html`: Este é o arquivo de modelo para a página Aluno da aplicação.
+
+- `templates/professor.html`: Este é o arquivo de modelo para a página Professor da aplicação.
+
+- `templates/diretor.html`: Este é o arquivo de modelo para a página Diretor da aplicação.
+
+- `static/`: Pasta com os arquivos em CSS.
+
 ## Instalação
 
 Para instalar e executar este projeto, você precisa ter Python 3 e pip instalados em seu sistema.
@@ -24,11 +32,7 @@ Para instalar e executar este projeto, você precisa ter Python 3 e pip instalad
    git clone https://github.com/seu_usuario/Projeto_Senac.git
    ```
 
-2. Vá para o diretório do projeto:
-
-   ```
-   cd Projeto_Senac
-   ```
+2. Vá para o diretório do projeto
 
 3. Em seguida, instale as dependências do projeto usando pip:
 
