@@ -62,7 +62,7 @@ Para contribuir para este projeto, siga os seguintes passos:
 
 Por favor, certifique-se de testar suas alterações antes de abrir um pull request.
 
-A segunda entrega do PI será mais desafiadora e vocês deverão utilizar os conhecimentos adquiridos em disciplinas de desenvolvimento web.
+## A segunda entrega do PI será mais desafiadora e vocês deverão utilizar os conhecimentos adquiridos em disciplinas de desenvolvimento web.
 
     1. Pensem em uma história/jornada a partir da visão de produto, personas e protótipo desenvolvido na primeira entrega e elabore uma aplicação web ou um aplicativo que reflita este cenário/jornada;
 
@@ -70,7 +70,7 @@ A segunda entrega do PI será mais desafiadora e vocês deverão utilizar os con
 
     3. Produzir um vídeo de aproximadamente 1 min mostrando o app web em funcionamento. Enviar um link privado do YouTube.
 
-Alunos: 
+## Alunos: 
 
     BARBARA GOMES BARBOSA
     BRUNO SANTOS SOUZA
