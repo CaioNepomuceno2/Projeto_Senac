@@ -13,10 +13,12 @@ Os arquivos principais da aplicação são:
 - `db.py`: Este arquivo contém funções para a criação do banco de dados e para adicionar usuários.
 
 - `templates/index.html`: Este é o arquivo de modelo para a página inicial da aplicação.
+- ![Logo do Projeto Senac](https://github.com/seu_usuario/Projeto_Senac/img/logo.png)
 
 - `templates/dashboard.html`: Este é o arquivo de modelo para a página Aluno da aplicação.
 
 - `templates/professor.html`: Este é o arquivo de modelo para a página Professor da aplicação.
+- ![Logo do Projeto Senac](https://github.com/seu_usuario/Projeto_Senac/img/logo.png)
 
 - `templates/diretor.html`: Este é o arquivo de modelo para a página Diretor da aplicação.
 
