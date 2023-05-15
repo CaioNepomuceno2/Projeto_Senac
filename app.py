@@ -67,7 +67,7 @@ def diretor():
 
 @app.route('/professor')
 def professor():
-    return render_template('dashboard.html')
+    return render_template('professor.html')
 
 @app.route('/aluno')
 def aluno():
