@@ -71,7 +71,7 @@ def professor():
 
 @app.route('/aluno')
 def aluno():
-    return render_template('dashboard.html')
+    return render_template('aluno.html')
 
 
 if __name__ == '__main__':

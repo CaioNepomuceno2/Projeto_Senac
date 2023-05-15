@@ -1,11 +1,218 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página do Professor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+     
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+
+    <title>Dash Professor</title>
 </head>
 <body>
-    <h1>Bem-vindo, Professor!</h1>
+    <nav>
+        <div class="logo-name">
+            <div class="logo-image">
+               <img src="images/logo.png" alt="">
+            </div>
+
+            <span class="logo_name">Professor</span>
+        </div>
+
+        <div class="menu-items">
+            <ul class="nav-links">
+                <li><a href="#">
+                    <i class="uil uil-estate"></i>
+                    <span class="link-name">Dahsboard</span>
+                </a></li>
+                <li><a href="#">
+                    <i class="uil uil-book-reader"></i>
+                    <span class="link-name">Alunos</span>
+                </a></li>
+                <li><a href="#">
+                    <i class="uil uil-chart"></i>
+                    <span class="link-name">Aulas</span>
+                </a></li>
+                <li><a href="#">
+                    <i class="uil uil-clipboard-alt"></i>
+                    <span class="link-name">FAQ</span>
+                </a></li>
+                <li><a href="#">
+                    <i class="uil uil-comments"></i>
+                    <span class="link-name">Comentários</span>
+                </a></li>
+
+            </ul>
+            
+            <ul class="logout-mode">
+                <li><a href="{{ url_for('logout') }}">
+                    <i class="uil uil-signout"></i>
+                    <span class="link-name">Sair</span>
+                </a></li>
+
+                <li class="mode">
+                    <a href="#">
+                        <i class="uil uil-moon"></i>
+                    <span class="link-name">Modo Escuro</span>
+                </a>
+
+                <div class="mode-toggle">
+                  <span class="switch"></span>
+                </div>
+            </li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="dashboard">
+        <div class="top">
+            <i class="uil uil-bars sidebar-toggle"></i>
+
+            <div class="search-box">
+                <i class="uil uil-search"></i>
+                <input type="text" placeholder="Search here...">
+            </div>
+            
+            <!--<img src="images/profile.jpg" alt="">-->
+        </div>
+
+        <div class="dash-content">
+            <div class="overview">
+                <div class="title">
+                    <i class="uil uil-tachometer-fast-alt"></i>
+                    <span class="text">Dashboard</span>
+                </div>
+
+                <div class="boxes">
+                    <div class="box box1">
+                        <i class="uil uil-book-reader"></i>
+                        <span class="text">Alunos</span>
+                        <span class="number">50</span>
+                    </div>
+                    <div class="box box2">
+                        <i class="uil uil-comments"></i>
+                        <span class="text">Cometários Não Lidos</span>
+                        <span class="number">20</span>
+                    </div>
+                    <div class="box box3">
+                        <i class="uil uil-clipboard-alt"></i>
+                        <span class="text">FAQ Novos</span>
+                        <span class="number">5</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="activity">
+                <div class="title">
+                    <i class="uil uil-clock-three"></i>
+                    <span class="text">Ultima Atividades dos Alunos</span>
+                </div>
+
+                <div class="activity-data">
+                    <div class="data names">
+                        <span class="data-title">Alunos</span>
+                        <span class="data-list">Aluno1</span>
+                        <span class="data-list">Aluno2</span>
+                        <span class="data-list">Aluno3</span>
+                        <span class="data-list">Aluno4</span>
+                        <span class="data-list">Aluno5</span>
+                        <span class="data-list">Aluno6</span>
+                        <span class="data-list">Aluno7</span>
+                        
+                    </div>
+                    <div class="data email">
+                        <span class="data-title">Email</span>
+                        <span class="data-list">Aluno1@gmail.com</span>
+                        <span class="data-list">Aluno2@gmail.com</span>
+                        <span class="data-list">Aluno3@gmail.com</span>
+                        <span class="data-list">Aluno4@gmail.com</span>
+                        <span class="data-list">Aluno5@gmail.com</span>
+                        <span class="data-list">Aluno6@gmail.com</span>
+                        <span class="data-list">Aluno7@gmail.com</span>
+                        
+                    </div>
+                    <div class="data joined">
+                        <span class="data-title">Ultimo Acesso</span>
+                        <span class="data-list">12-05-2023</span>
+                        <span class="data-list">12-05-2023</span>
+                        <span class="data-list">12-05-2023</span>
+                        <span class="data-list">12-05-2023</span>
+                        <span class="data-list">12-05-2023</span>
+                        <span class="data-list">12-05-2023</span>
+                        <span class="data-list">12-05-2023</span>
+                    </div>
+                    <div class="data type">
+                        <span class="data-title">Semestre</span>
+                        <span class="data-list">3 Semestre</span>
+                        <span class="data-list">4 Semestre</span>
+                        <span class="data-list">3 Semestre</span>
+                        <span class="data-list">4 Semestre</span>
+                        <span class="data-list">3 Semestre</span>
+                        <span class="data-list">4 Semestre</span>
+                        <span class="data-list">4 Semestre</span>
+                    </div>
+                    <div class="data status">
+                        <span class="data-title">Situação das Aulas</span>
+                        <span class="data-list">Concluída</span>
+                        <span class="data-list">Concluída</span>
+                        <span class="data-list">Concluída</span>
+                        <span class="data-list">Concluída</span>
+                        <span class="data-list">Pendentes</span>
+                        <span class="data-list">Pendentes</span>
+                        <span class="data-list">Pendentes</span>
+                    </div>
+                    <div class="data status">
+                        <span class="data-title">Notas</span>
+                        <span class="data-list">9.0</span>
+                        <span class="data-list">8.0</span>
+                        <span class="data-list">7.0</span>
+                        <span class="data-list">6.0</span>
+                        <span class="data-list">5.0</span>
+                        <span class="data-list">4.0</span>
+                        <span class="data-list">3.0</span>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
 </body>
+<script>
+    const body = document.querySelector("body"),
+      modeToggle = body.querySelector(".mode-toggle");
+      sidebar = body.querySelector("nav");
+      sidebarToggle = body.querySelector(".sidebar-toggle");
+
+let getMode = localStorage.getItem("mode");
+if(getMode && getMode ==="dark"){
+    body.classList.toggle("dark");
+}
+
+let getStatus = localStorage.getItem("status");
+if(getStatus && getStatus ==="close"){
+    sidebar.classList.toggle("close");
+}
+
+modeToggle.addEventListener("click", () =>{
+    body.classList.toggle("dark");
+    if(body.classList.contains("dark")){
+        localStorage.setItem("mode", "dark");
+    }else{
+        localStorage.setItem("mode", "light");
+    }
+});
+
+sidebarToggle.addEventListener("click", () => {
+    sidebar.classList.toggle("close");
+    if(sidebar.classList.contains("close")){
+        localStorage.setItem("status", "close");
+    }else{
+        localStorage.setItem("status", "open");
+    }
+})
+</script>
 </html>

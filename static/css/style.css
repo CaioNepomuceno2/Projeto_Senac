@@ -19,6 +19,7 @@
     --box2-color:#6c79f1;
     --box3-color: #f16c7a;
     --title-icon-color:#e0d1ed;
+    --materia1: lightgreen
     
     /* ====== Transition ====== */
     --tran-05: all 0.5s ease;
@@ -361,6 +362,8 @@ nav.close ~ .dashboard .top{
     color: var(--text-color);
 }
 
+
+
 @media (max-width: 1000px) {
     nav{
         width: 73px;
@@ -455,4 +458,16 @@ nav.close ~ .dashboard .top{
         left: 0;
         width: 100%;
     }
+}
+.data-list .cursando {
+color: #90EE90;
+font-weight: bold;
+}
+.aprovado {
+color: #006400;
+font-weight: bold;
+}
+.reprovado {
+color: #FF0000;
+font-weight: bold;
 }
