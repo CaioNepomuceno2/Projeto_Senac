@@ -26,7 +26,7 @@ Os arquivos principais da aplicação são:
 
 - `static/`: Pasta com os arquivos em CSS.
 
--`Modo Escuro`: Está disponivel nos paineis  
+-`Modo Escuro`: Está disponivel nos paineis.
 
 
 ## Instalação
