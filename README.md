@@ -16,17 +16,16 @@ Os arquivos principais da aplicação são:
 - ![Logo do Projeto Senac](https://github.com/CaioNepomuceno2/Projeto_Senac/blob/9b79c47fe8c0bcbdd4bc43b922d0b4afff4e952f/static/img/TelaLogin.PNG)
 
 - `templates/aluno.html`: Este é o arquivo de modelo para a página Aluno da aplicação.
-- ![Logo do Projeto Senac](https://github.com/CaioNepomuceno2/Projeto_Senac/blob/9b79c47fe8c0bcbdd4bc43b922d0b4afff4e952f/static/img/aluno.PNG)
+- ![Logo do Projeto Senac](https://github.com/CaioNepomuceno2/Projeto_Senac/blob/0d4856f61f024fbbca85c1be335fead7255888a5/static/img/aluno.PNG)
 -
 - `templates/professor.html`: Este é o arquivo de modelo para a página Professor da aplicação.
 - ![Logo do Projeto Senac](https://github.com/CaioNepomuceno2/Projeto_Senac/blob/9b79c47fe8c0bcbdd4bc43b922d0b4afff4e952f/static/img/dashprof.PNG)
 
 - `templates/diretor.html`: Este é o arquivo de modelo para a página Diretor da aplicação.
-- - ![Logo do Projeto Senac](https://github.com/CaioNepomuceno2/Projeto_Senac/blob/9b79c47fe8c0bcbdd4bc43b922d0b4afff4e952f/static/img/diretor.PNG)
-
+- - ![Logo do Projeto Senac](https://github.com/CaioNepomuceno2/Projeto_Senac/blob/fdd8a0a27fea02676caa009f944a92bc4d745476/static/img/diretor.PNG)
 - `static/`: Pasta com os arquivos em CSS.
 
--`Modo Escuro`: Está disponivel nos paineis  
+-`Modo Escuro`: Está disponivel nos paineis.
 
 
 ## Instalação
