@@ -1,4 +1,4 @@
-/* ===== Google Font Import - Poppins ===== */
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap');
 *{
     margin: 0;
@@ -8,7 +8,6 @@
 }
 
 :root{
-    /* ===== Colors ===== */
     --primary-color: #8993f3;
     --panel-color: #FFF;
     --text-color: #000;
@@ -21,7 +20,6 @@
     --title-icon-color:#e0d1ed;
     --materia1: lightgreen
     
-    /* ====== Transition ====== */
     --tran-05: all 0.5s ease;
     --tran-03: all 0.3s ease;
     --tran-03: all 0.2s ease;
@@ -43,7 +41,7 @@ body.dark{
     --box3-color: #3A3B3C;
     --title-icon-color: #CCC;
 }
-/* === Custom Scroll Bar CSS === */
+
 ::-webkit-scrollbar {
     width: 8px;
 }
