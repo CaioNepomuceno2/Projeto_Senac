@@ -48,7 +48,7 @@
                 {% endif %}
 
                 <a href="#" class="recuperar-senha">Recuperar Senha</a>
-                <button type="button" class="entrar" onclick="login()">Entrar</button>
+                <button type="button" class="entrar">Entrar</button>
                 <div class="roles">
                     <button type="button" class="diretor">Direção</button>
                     <button type="button" class="professor">Professor</button>
@@ -59,8 +59,13 @@
     </div>
 </body>
 <script>
+    function toggleAcessibilidadeMenu() {
+        document.getElementById('acessibilidadeMenu').classList.toggle('show');
+    }
+
     const darkModeToggle = document.getElementById('darkModeToggle');
     darkModeToggle.checked = localStorage.getItem('theme') === 'dark';
+    document.documentElement.setAttribute('data-theme', darkModeToggle.checked ? 'dark' : 'light');
 
     darkModeToggle.addEventListener('change', () => {
         const theme = darkModeToggle.checked ? 'dark' : 'light';

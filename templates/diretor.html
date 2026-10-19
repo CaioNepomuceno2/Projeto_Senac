@@ -15,7 +15,7 @@
     <nav>
         <div class="logo-name">
             <div class="logo-image">
-               <img src="images/logo.png" alt="">
+               <img src="{{ url_for('static', filename='img/cap.png') }}" alt="Logo">
             </div>
 
             <span class="logo_name">Admin</span>
@@ -25,7 +25,7 @@
             <ul class="nav-links">
                 <li><a href="#">
                     <i class="uil uil-estate"></i>
-                    <span class="link-name">Dahsboard</span>
+                    <span class="link-name">Dashboard</span>
                 </a></li>
                 <li><a href="#">
                     <i class="uil uil-book-reader"></i>
@@ -170,7 +170,6 @@
         </div>
     </section>
 
-    <script src="script.js"></script>
 </body>
 <script>
     const body = document.querySelector("body"),

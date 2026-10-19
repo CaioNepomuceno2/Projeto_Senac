@@ -1,78 +1,88 @@
-from flask import Flask, request, jsonify, redirect, url_for, render_template
-import sqlite3
+import os
+from functools import wraps
+
+from flask import Flask, redirect, render_template, request, session, url_for
+from werkzeug.security import check_password_hash
+
+import db
 
 app = Flask(__name__)
+# Em produção defina a variável de ambiente SECRET_KEY; o valor abaixo é só para desenvolvimento.
+app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'dev-chave-insegura-troque-em-producao')
 
-@app.route('/logout')
-def logout():
-    return redirect(url_for('index')) 
+db.init_db()
 
 
-def get_role(username, password):
-    with sqlite3.connect('users.db') as con:
-        cur = con.cursor()
-        cur.execute("SELECT role FROM users WHERE username = ? AND password = ?", (username, password))
-        result = cur.fetchone()
-        if result:
-            return result[0]
-        else:
-            return None
+def role_required(role):
+    """Permite acessar a página apenas se o usuário logado tiver o perfil indicado."""
+    def decorator(view):
+        @wraps(view)
+        def wrapper(*args, **kwargs):
+            if session.get('role') != role:
+                return redirect(url_for('index'))
+            return view(*args, **kwargs)
+        return wrapper
+    return decorator
 
-@app.route('/get_user_data', methods=['POST'])
-def get_user_data():
-    role = request.form.get('role')
-    if role:
-        conn = sqlite3.connect('users.db')
-        c = conn.cursor()
-        c.execute('SELECT username, password FROM users WHERE role = ?', (role,))
-        user_data = c.fetchone()
-        conn.close()
-        if user_data:
-            return jsonify({"username": user_data[0], "password": user_data[1]})
-        else:
-            return jsonify({"error": "Nenhum usuário encontrado para o papel selecionado."})
-    else:
-        return jsonify({"error": "Papel não fornecido."})
+
+def authenticate(username, password, role):
+    user = db.find_user(username)
+    return bool(user and user['role'] == role and check_password_hash(user['password'], password))
+
 
 @app.route('/login_with_role', methods=['POST'])
 def login_with_role():
-    username = request.form['username']
-    password = request.form['password']
-    role = request.form.get('role')
+    username = request.form.get('username', '')
+    password = request.form.get('password', '')
+    # O botão "Entrar" não envia perfil e faz login como aluno;
+    # os botões "Direção" e "Professor" enviam o perfil correspondente.
+    role = request.form.get('role') or 'aluno'
 
-    with sqlite3.connect('users.db') as con:
-        cur = con.cursor()
-        if role:
-            cur.execute("SELECT role FROM users WHERE username = ? AND password = ? AND role = ?", (username, password, role))
-        else:
-            cur.execute("SELECT role FROM users WHERE username = ? AND password = ? AND role = 'aluno'", (username, password))
-        result = cur.fetchone()
+    if role not in db.ROLES:
+        return 'Perfil inválido.', 400
 
-    if result:
-        return result[0]
-    else:
-        return "Usuário ou senha inválidos.", 401
+    if authenticate(username, password, role):
+        session.clear()
+        session['username'] = username
+        session['role'] = role
+        return role
+    return 'Usuário ou senha inválidos.', 401
 
-@app.route('/dashboard')
-def dashboard():
-    return render_template('dashboard.html')
+
+@app.route('/logout')
+def logout():
+    session.clear()
+    return redirect(url_for('index'))
+
 
 @app.route('/')
 def index():
     return render_template('index.html')
 
+
+@app.route('/dashboard')
+@role_required('professor')
+def dashboard():
+    return render_template('dashboard.html')
+
+
 @app.route('/diretor')
+@role_required('diretor')
 def diretor():
     return render_template('diretor.html')
 
+
 @app.route('/professor')
+@role_required('professor')
 def professor():
     return render_template('professor.html')
 
+
 @app.route('/aluno')
+@role_required('aluno')
 def aluno():
     return render_template('aluno.html')
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=os.environ.get('FLASK_DEBUG') == '1')
