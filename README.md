@@ -33,8 +33,8 @@ Cada perfil é direcionado para um painel próprio, com menu lateral recolhível
 Pré-requisito: Python 3.9 ou superior.
 
 ```bash
-git clone https://github.com/CaioNepomuceno2/Projeto_Senac.git
-cd Projeto_Senac
+git clone https://github.com/CaioNepomuceno2/senac-university-management.git
+cd senac-university-management
 
 python -m venv .venv
 # Windows
